@@ -12,8 +12,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
-root: /
+url: http://langdawei.com/SHmeetup
+root: /SHmeetup/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -76,3 +76,4 @@ archive_generator:
 deploy:
   type: git
   repo: https://github.com/lchiffon/SHmeetup
+  branch: gh-pages
