@@ -227,9 +227,10 @@ a:hover, a:active {
 .sidebar .social-links a:hover {
   color: #4786D6;
 }
-.sidebar ＃allmap {
+
+＃allmap {
   width:auto;
-  height:50%;
+  height:500px;
 }
 
 
