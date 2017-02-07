@@ -205,11 +205,11 @@ a:hover, a:active {
 	z-index: 4;
 	border-right: 1px solid #f2f2f2;
 
-	＃allmap {
-	  width:auto;
-	  height:500px;
+	#allmap {
+		width:200px;
+		height:500px !important;
 	}
-	
+
 	.logo-title{
 		text-align: center;
 		padding-top:240px;
