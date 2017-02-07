@@ -14,14 +14,21 @@ html(lang="zh-CN")
     script(src= url_for('js/jquery-migrate-1.2.1.min.js'))
     script(src= url_for('js/jquery.appear.js'))
     script(src='http://api.map.baidu.com/api?v=2.0&ak=wwZFCIqxIqjRGMVsZ0qgTh7D')
+    script(src='http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js')
+    link(rel='stylesheet',href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css")
     script.
-      var map = new BMap.Map("allmap");
-      map.centerAndZoom("上海",15);
+      var map = new BMap.Map('allmap');
+      var poi = new BMap.Point(121.455345,31.23271);
+      map.centerAndZoom(poi, 16);
+      map.enableScrollWheelZoom();
+      var content = '<div style="margin:0;line-height:20px;padding:2px;">' + '地址: 愚园东路28号东海广场3号楼1楼, 近地铁2,7号线静安寺站' + '<br/>时间: 2017-02-18 14:00</div>';
+      //创建检索信息窗口对象
+      var searchInfoWindow = null;
+      searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {title:"东海广场3号楼", width:290, height:60, panel:"panel", enableAutoPan : true, searchTypes:[BMAPLIB_TAB_SEARCH,BMAPLIB_TAB_TO_HERE, BMAPLIB_TAB_FROM_HERE]});
+      var marker = new BMap.Marker(poi); //创建marker对象
+      marker.enableDragging(); //marker可拖拽
+      marker.addEventListener("click", function(e){ searchInfoWindow.open(marker)});
+      map.addOverlay(marker); //在地图中添加marker
       var ele = document.getElementById('allmap');
       ele.style.height='50%';
-      ele.style.width='80%';
-      //map.centerAndZoom(new BMap.Point(116.404, 39.915), 15);
-      // var local = new BMap.LocalSearch(map, {
-      //  renderOptions:{map: map}
-      // });
-      // local.search("紫禁城");
+      ele.style.width='100%';
