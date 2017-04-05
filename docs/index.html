@@ -3,13 +3,16 @@
 
 最基础的爬虫：解析网页。包括HTML DOM， xpath和Regular Expression等的介绍。
 爬取Ajax加载的数据。以Chrome的Developer To...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-02-07</span><i class="fa fa-comment-o"></i><a href="/SHmeetup/2017/02/07/20170218/#comments">评论</a><i class="fa fa-tag"></i><a href="/SHmeetup/categories/沙龙分享/" title="沙龙分享" class="tag">沙龙分享 </a></div></div></div></div><div class="pagination"><ul class="clearfix"></ul></div></div></div></div><script src="/SHmeetup/js/jquery.js"></script><script src="/SHmeetup/js/jquery-migrate-1.2.1.min.js"></script><script src="/SHmeetup/js/jquery.appear.js"></script><script src="http://api.map.baidu.com/api?v=2.0&amp;ak=wwZFCIqxIqjRGMVsZ0qgTh7D"></script><script src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script><link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css"><script>var map = new BMap.Map('allmap');
-var poi = new BMap.Point(121.455345,31.23271);
+// var poi = new BMap.Point(121.455345,31.23271);
+var poi = new BMap.Point(121.448996,31.241256);
 map.centerAndZoom(poi, 16);
 map.enableScrollWheelZoom();
-var content = '<div style="margin:0;line-height:20px;padding:2px;">' + '地址: 愚园东路28号东海广场3号楼1楼, 近地铁2,7号线静安寺站' + '<br/>时间: 2017-02-18 14:00</div>';
+// var content = '<div style="margin:0;line-height:20px;padding:2px;">' + '地址: 愚园东路28号东海广场3号楼1楼, 近地铁2,7号线静安寺站' + '<br/>时间: 2017-02-18 14:00</div>';
+var content = '<div style="margin:0;line-height:20px;padding:2px;">' + '地址: 昌平路700号，劳动报社大厦一楼 联合创业办公社－光源';
 //创建检索信息窗口对象
 var searchInfoWindow = null;
-searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {title:"东海广场3号楼", width:290, height:60, panel:"panel", enableAutoPan : true, searchTypes:[BMAPLIB_TAB_SEARCH,BMAPLIB_TAB_TO_HERE, BMAPLIB_TAB_FROM_HERE]});
+// searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {title:"东海广场3号楼", width:290, height:60, panel:"panel", enableAutoPan : true, searchTypes:[BMAPLIB_TAB_SEARCH,BMAPLIB_TAB_TO_HERE, BMAPLIB_TAB_FROM_HERE]});
+searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {title:"联合创业办公社－光源", width:290, height:60, panel:"panel", enableAutoPan : true, searchTypes:[BMAPLIB_TAB_SEARCH,BMAPLIB_TAB_TO_HERE, BMAPLIB_TAB_FROM_HERE]});
 var marker = new BMap.Marker(poi); //创建marker对象
 marker.enableDragging(); //marker可拖拽
 marker.addEventListener("click", function(e){ searchInfoWindow.open(marker)});

@@ -27,7 +27,7 @@
 <li>其他实例演示</li>
 </ol>
 <p>建议试读<a href="https://www.slideshare.net/tw_dsconf/ss-62245351" target="_blank" rel="external">Deep Leanring Tutorial By Hung-yi Lee</a></p>
-<h3 id="地点与时间"><a href="#地点与时间" class="headerlink" title="地点与时间"></a>地点与时间</h3><p>地点: 愚园东路28号东海广场3号楼1楼, 近地铁2,7号线静安寺站<br>时间: 4.08下午14:00</p>
+<h3 id="地点与时间"><a href="#地点与时间" class="headerlink" title="地点与时间"></a>地点与时间</h3><p>地点: 昌平路700号，劳动报社大厦一楼 联合创业办公社－光源<br>时间: 4.08下午14:00</p>
 <h3 id="时间安排"><a href="#时间安排" class="headerlink" title="时间安排"></a>时间安排</h3><p>以下是我们的timeline:</p>
 <p>14:10 ~ 14:20 Warm up Discussion<br>14:30 ~ 14:50 Main Issue I<br>15:00 ~ 15:20 Main Issue II<br>15:30 ~ 16:00 Group Discussion<br>而如果遇到时间比较长一点的演讲，或是遇到大家反应比较热烈、讨论比较激烈的演讲，我们会自动将 Main Issue 的时间稍微延后 10 ~ 20 分钟。</p>
 <p>(1) Warm up Discussion：</p>
@@ -51,13 +51,16 @@
 })();
 
 </script></div></div></div></div><script src="/SHmeetup/js/jquery.js"></script><script src="/SHmeetup/js/jquery-migrate-1.2.1.min.js"></script><script src="/SHmeetup/js/jquery.appear.js"></script><script src="http://api.map.baidu.com/api?v=2.0&amp;ak=wwZFCIqxIqjRGMVsZ0qgTh7D"></script><script src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script><link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css"><script>var map = new BMap.Map('allmap');
-var poi = new BMap.Point(121.455345,31.23271);
+// var poi = new BMap.Point(121.455345,31.23271);
+var poi = new BMap.Point(121.448996,31.241256);
 map.centerAndZoom(poi, 16);
 map.enableScrollWheelZoom();
-var content = '<div style="margin:0;line-height:20px;padding:2px;">' + '地址: 愚园东路28号东海广场3号楼1楼, 近地铁2,7号线静安寺站' + '<br/>时间: 2017-02-18 14:00</div>';
+// var content = '<div style="margin:0;line-height:20px;padding:2px;">' + '地址: 愚园东路28号东海广场3号楼1楼, 近地铁2,7号线静安寺站' + '<br/>时间: 2017-02-18 14:00</div>';
+var content = '<div style="margin:0;line-height:20px;padding:2px;">' + '地址: 昌平路700号，劳动报社大厦一楼 联合创业办公社－光源';
 //创建检索信息窗口对象
 var searchInfoWindow = null;
-searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {title:"东海广场3号楼", width:290, height:60, panel:"panel", enableAutoPan : true, searchTypes:[BMAPLIB_TAB_SEARCH,BMAPLIB_TAB_TO_HERE, BMAPLIB_TAB_FROM_HERE]});
+// searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {title:"东海广场3号楼", width:290, height:60, panel:"panel", enableAutoPan : true, searchTypes:[BMAPLIB_TAB_SEARCH,BMAPLIB_TAB_TO_HERE, BMAPLIB_TAB_FROM_HERE]});
+searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {title:"联合创业办公社－光源", width:290, height:60, panel:"panel", enableAutoPan : true, searchTypes:[BMAPLIB_TAB_SEARCH,BMAPLIB_TAB_TO_HERE, BMAPLIB_TAB_FROM_HERE]});
 var marker = new BMap.Marker(poi); //创建marker对象
 marker.enableDragging(); //marker可拖拽
 marker.addEventListener("click", function(e){ searchInfoWindow.open(marker)});
