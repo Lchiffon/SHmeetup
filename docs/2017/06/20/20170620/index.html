@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Ben Wong,wenbinben@gmail.com"><title>上海线下数据沙龙第四期 · Shanghai Meetup</title><meta name="description" content="主题：xgboost ／ NLP入门分享嘉宾 ：尹志，边蓓蕾主办：上海R-user group meetup地点: 愚园东路28号东海广场3号楼1楼, 近地铁2,7号线静安寺站时间: 7.1下午14:00
+
+漫谈gradient boosting及XGBoost分享人: 尹志
+尹志 浙江大学物理学博"><meta name="keywords" content="R,Python,数据科学,可视化"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/SHmeetup/css/style.css"><link rel="stylesheet" href="/SHmeetup/css/blog_basic.css"><link rel="stylesheet" href="/SHmeetup/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div id="allmap"></div><div class="logo-title"><div class="title"><h3 title=""><a href="/">Shanghai Meetup</a></h3><div class="description"><p>Nothing lasts forever.</p></div></div></div><ul class="social-links"><li><a href="https://twitter.com/Ben_wenbin"><i class="fa fa-twitter"></i></a></li><li><a href="http://instagram.com/hwbinbenben"><i class="fa fa-instagram"></i></a></li><li><a href="/SHmeetup/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://weibo.com/ben0036"><i class="fa fa-weibo"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai</a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/SHmeetup">首页</a></li><li><a href="/SHmeetup/about">关于</a></li><li><a href="/SHmeetup/archives">归档</a></li><li><a href="/SHmeetup/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"></a></li></div><div class="avatar"><img src="https://secure.gravatar.com/avatar/e71df8021446fe9759a9928b1dd5c28d?s=180&amp;r=G&amp;d="></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>上海线下数据沙龙第四期</a></h3></div><div class="post-content"><p>主题：xgboost ／ NLP入门<br>分享嘉宾 ：尹志，边蓓蕾<br>主办：上海R-user group meetup<br>地点: 愚园东路28号东海广场3号楼1楼, 近地铁2,7号线静安寺站<br>时间: 7.1下午14:00</p>
+<p><img src="https://user-images.githubusercontent.com/7221728/27313756-3a372a4c-55a2-11e7-84ea-e73abaa2b22c.png" alt="image"></p>
+<h4 id="漫谈gradient-boosting及XGBoost"><a href="#漫谈gradient-boosting及XGBoost" class="headerlink" title="漫谈gradient boosting及XGBoost"></a>漫谈gradient boosting及XGBoost</h4><h4 id="分享人-尹志"><a href="#分享人-尹志" class="headerlink" title="分享人: 尹志"></a>分享人: 尹志</h4><blockquote>
+<p>尹志 浙江大学物理学博士, 现就职于宁波工程学院理学院. 云朵网络大数据技术总监.</p>
+</blockquote>
+<p>“武林至尊，宝刀屠龙，号令天下，莫敢不从。”</p>
+<p>作为机器学习武林的屠龙宝刀-XGBoost，是一个以gradient boosting内功心法催动<br>的开源库。它以快速、高效、精准的特点处理回归、分类和排序等多种<br>机器学习任务。在当前各大数据科学竞赛的获胜方案中也频频出现它的身影。</p>
+<p>本次分享将简要介绍gradient boosting及XGBoost的历史、用法、优势、特性等<br>方方面面。让小伙伴们快速了解这把屠龙宝刀，使其在更多场景下发挥作用。</p>
+<p>项目链接：<a href="http://xgboost.readthedocs.io/en/latest/" target="_blank" rel="external">http://xgboost.readthedocs.io/en/latest/</a></p>
+<h4 id="NLP入门"><a href="#NLP入门" class="headerlink" title="NLP入门"></a>NLP入门</h4><h4 id="分享人-边蓓蕾"><a href="#分享人-边蓓蕾" class="headerlink" title="分享人: 边蓓蕾"></a>分享人: 边蓓蕾</h4><blockquote>
+<p>边蓓蕾 百分点数据科学家, 曾任WeGene生物信息工程师, 负责祖源分析算法开发.</p>
+</blockquote>
+<p>入门自然语言处理并非需要一头杀入苦海，私以为这是个非常前沿且理论很艰深的方向，但快速入门的最佳方式依然是从感性的角度认识这个领域，也就是拿个例子按照教程自己跑跑。如果想在工程学上做到技术全面，可以试试自己爬取，清洗，建模，将模型封装成服务，甚至，在前端展示。</p>
+<p>情感分析（观点挖掘）是指用自然语言过程和文本挖掘等技术将一些主观的信息进行分类，目前广泛应用于客户评论、调查反馈、社交媒体、推荐系统等领域。本项目旨在介绍自然语言处理的基本概念，在此基础之上使用电商网站客户评论数据，讲解基于词向量的学习进行情感分析的案例。</p>
+<p>可能用到的模型：</p>
+<ul>
+<li>word2vec（必选）</li>
+<li>常用的有监督学习模型（必选）</li>
+<li>CNN（待定）</li>
+<li>RNN（待定）</li>
+</ul>
+<p>推荐要读的论文：</p>
+<ol>
+<li>Mikolov, Tomas, et al. “Efficient estimation of word representations in vector space.” arXiv preprint arXiv:1301.3781 (2013).</li>
+<li>Andrew L. Maas, Raymond E. Daly, Peter T. Pham, Dan Huang, Andrew Y. Ng, and Christopher Potts. (2011). “Learning Word Vectors for Sentiment Analysis.” The 49th Annual Meeting of the Association for Computational Linguistics (ACL 2011).</li>
+<li>Kim, Yoon. “Convolutional neural networks for sentence classification.” arXiv preprint arXiv:1408.5882 (2014).</li>
+<li>Socher, Richard, et al. “Recursive deep models for semantic compositionality over a sentiment treebank.” Proceedings of the conference on empirical methods in natural language processing (EMNLP). Vol. 1631. 2013.</li>
+</ol>
+<p>技术上主要使用python实现，如果遇到非要用stanford NLP搞定的，那就一定要写java，虽然也有python的API，总的来说不全。</p>
+<h3 id="地点与时间"><a href="#地点与时间" class="headerlink" title="地点与时间"></a>地点与时间</h3><p>地点: 愚园东路28号东海广场3号楼1楼, 近地铁2,7号线静安寺站<br>时间: 7.1下午14:00</p>
+<h3 id="时间安排"><a href="#时间安排" class="headerlink" title="时间安排"></a>时间安排</h3><p>以下是我们的timeline:</p>
+<p>14:10 ~ 14:20 Warm up Discussion<br>14:30 ~ 14:50 Main Issue I<br>15:00 ~ 15:20 Main Issue II<br>15:30 ~ 16:00 Group Discussion<br>而如果遇到时间比较长一点的演讲，或是遇到大家反应比较热烈、讨论比较激烈的演讲，我们会自动将 Main Issue 的时间稍微延后 10 ~ 20 分钟。</p>
+<p>(1) Warm up Discussion：</p>
+<p>在 Warm up Discussion 中，我们可能会分享一些 R 的 Tips 或是一些 MLDM 上的 Tips，做为每次聚会的开端。</p>
+<p>(2) Main Issue：</p>
+<p>在 Main Issue 的部分，我们主要会排入一些经验分享的议题：其中包含 MLDM 的经验分享、一些好用的工具的使用经验分享、R的工具介绍、MLDM 方法的介绍与讨论、一些好玩的 Data 议题、或是一些资料库的工具与议题……等等，都是我们希望能排入议程的主题。也欢迎与会的大家，可以不吝分享您的专长，让大家可以有互相交流与学习的机会。</p>
+<p>(3) Group Discussion：</p>
+<p>最后的 Group Discussion，其实是让大家有一个每周一起讨论某个主题的机会与时间。也许大家会一起开读书会，看看 coursera 上的影片，大就可以每周聚在一起，讨论一下影片的进度与看到的问题；或许，大家是想要组队去 Kaggle 比赛，也可以利用这时间，和队友好好讨论一下进度；更或许，你们是一起在关注某种 data 的伙伴，也可以利用这时间来讨论一下彼此分析的心得唷，说不定因此就可以激发出火花，研发出某种特殊的服务……等等。其实，只要有人发起，有人跟随，他就可以成为一个小小的讨论群组，在会后可以一起交流与讨论！</p>
+<p>当然，每次会又一定会有 Free Discussion 这组，让大家可以互相 Social 一下。也一定会有 R Tutorial 这组，让大家可以来询问一些 R 相关的议题</p>
+<p><strong>感谢<a href="https://www.meetup.com/Taiwan-R/" target="_blank" rel="external">Taiwan RUser group</a>提供的时间安排, 描述内容未做修改, <a href="https://github.com/qinwf/ropencc" target="_blank" rel="external">ropencc</a>完成的简繁体转换</strong></p>
+<h3 id="活动地点简介"><a href="#活动地点简介" class="headerlink" title="活动地点简介"></a>活动地点简介</h3><p><img src="http://p1.bpimg.com/4851/364f74412c0ae62b.jpg" alt="此处应有图"></p>
+<p>联合创业办公社（P2）是中国联合办公领域规模最大、起步最早、影响力最广、服务团队最多的联合办公空间，成立于2010年。目前，P2在全国范围已有20余个空间，空间内入驻了超过300家团队，吸引上万名会员。空间内团队总融资金额超过3.5亿美金，其中有超过10支团队在空间中融到了A轮。<br>2015-2016年，P2引进并主办了GCUC联合办公峰会，并将其在中国常态化。<br>2016年3月，P2与北京创客空间达成合资协议，打造了国内最具产业吸引力的创客空间品牌Maker²。<br>2016年4月，P2与Google for Entrepreneurs达成战略合作，加入其全球创业网络，合力布局开发。<br>2016年7月，P2与太合音乐集团成立合资公司，打造国内首家音乐垂直主题联合办公空间，殿堂级音乐人郑钧作为空间架构师。<br>2016年9月，P2与北京国华置业达成合作，共同打造北京CBD核心高端商业综合体”华贸中心”内的联合办公生态。</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-06-20</span><i class="fa fa-comment-o"></i><a href="/SHmeetup/2017/06/20/20170620/#comments">评论</a><i class="fa fa-tag"></i><a href="/SHmeetup/categories/沙龙分享/" title="沙龙分享" class="tag">沙龙分享 </a></div></div></div></div><div class="share"><div class="evernote"> <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"> <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"> <a href="http://twitter.com/home?status=,http://langdawei.com/SHmeetup/2017/06/20/20170620/,Shanghai Meetup,上海线下数据沙龙第四期,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a role="navigation" href="/SHmeetup/2017/06/09/20170609/" title="上海线下数据沙龙第三期纪要" class="btn">下一篇</a></li></ul></div><a id="comments"></a><div data-thread-key="2017/06/20/20170620/" data-title="上海线下数据沙龙第四期" data-url="http://langdawei.com/SHmeetup/SHmeetup/2017/06/20/20170620/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"yalei"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+
+</script></div></div></div></div><script src="/SHmeetup/js/jquery.js"></script><script src="/SHmeetup/js/jquery-migrate-1.2.1.min.js"></script><script src="/SHmeetup/js/jquery.appear.js"></script><script src="http://api.map.baidu.com/api?v=2.0&amp;ak=wwZFCIqxIqjRGMVsZ0qgTh7D"></script><script src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script><link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css"><script>var map = new BMap.Map('allmap');
+// var poi = new BMap.Point(121.455345,31.23271);
+var poi = new BMap.Point(121.448996,31.241256);
+map.centerAndZoom(poi, 16);
+map.enableScrollWheelZoom();
+// var content = '<div style="margin:0;line-height:20px;padding:2px;">' + '地址: 愚园东路28号东海广场3号楼1楼, 近地铁2,7号线静安寺站' + '<br/>时间: 2017-02-18 14:00</div>';
+var content = '<div style="margin:0;line-height:20px;padding:2px;">' + '地址: 昌平路700号，劳动报社大厦一楼 联合创业办公社－光源';
+//创建检索信息窗口对象
+var searchInfoWindow = null;
+// searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {title:"东海广场3号楼", width:290, height:60, panel:"panel", enableAutoPan : true, searchTypes:[BMAPLIB_TAB_SEARCH,BMAPLIB_TAB_TO_HERE, BMAPLIB_TAB_FROM_HERE]});
+searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {title:"联合创业办公社－光源", width:290, height:60, panel:"panel", enableAutoPan : true, searchTypes:[BMAPLIB_TAB_SEARCH,BMAPLIB_TAB_TO_HERE, BMAPLIB_TAB_FROM_HERE]});
+var marker = new BMap.Marker(poi); //创建marker对象
+marker.enableDragging(); //marker可拖拽
+marker.addEventListener("click", function(e){ searchInfoWindow.open(marker)});
+map.addOverlay(marker); //在地图中添加marker
+var ele = document.getElementById('allmap');
+ele.style.height='50%';
+ele.style.width='100%';</script></body></html>
