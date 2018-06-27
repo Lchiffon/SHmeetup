@@ -1,0 +1,68 @@
+language: node_js
+
+node_js: 6.0.0
+
+install:
+  - npm install hexo -g
+  - npm install
+
+script:
+  - # docs
+  - # git checkout dev
+  - pwd
+  - hexo g
+  - git config --global user.email "happy@langdawei.com"
+  - git config --global user.name "Dawei Lang"
+  - git clone -b gh-pages https://${GITHUB_PAT}@github.com/lchiffon/SHmeetup.git book-output
+  - cd book-output
+  - cp -r ../docs/* ./
+  - git add --all *
+  - git commit -m"Update the book" || true
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git push -q origin gh-pages; fi'
+  - cd ../..
+
+
+# deploy to XRAN
+after_success:
+  - # set -e
+  - # "(wget -q -O - http://yihui.name/xran/r-xran | bash)"
+  - pwd
+
+
+
+# https://github.com/acyortjs/demo.git 为存放网站文件项目地址
+# https://github.com/acyortjs/theme-donob.git themes/donob 为博客主题，如果你使用默认主题则可以去掉这句
+# ${GH_TOKEN} 为你在 travis-ci 设置的变量
+# public 为在 config.yml 设置的 public_dir 目录
+# 注意修改这里提交的用户名，邮箱
+# 这里提交的分支是 gh-pages，根据你的实际情况修改
+
+language: node_js
+
+node_js: 6.0.0
+
+install:
+  - npm install hexo -g
+  - npm install
+
+before_script:
+  - git clone https://github.com/lchiffon/lchiffon.github.io.git docs # public 这个目录跟你的 config.yml 设置一样
+  - cd docs
+  ##- git checkout gh-pages
+
+script:
+  - cd ../
+  ##- acyort init
+  ##- cp config.bak.yml config.yml
+  ##- cat config.yml
+  ##- rm config.bak.yml
+  # - git clone https://github.com/acyortjs/theme-donob.git themes/donob # 如果使用默认主题，可以不要这句
+  - hexo g
+
+after_script:
+  - cd docs
+  - git add .
+  - git config user.name "lchiffon" # 注意修改用户名
+  - git config user.email "chiffonlang@icloud.com" # 注意修改邮箱
+  - git commit -m "update from travis-ci"
+  - git push https://${GH_VALUE}@github.com/lchiffon/lchiffon.github.io.git master:master # 注意项目地址及分支名，这里的例子分支是 `gh-pages`
