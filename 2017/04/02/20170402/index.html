@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Ben Wong,wenbinben@gmail.com"><title>Meetup 4.08(客户分类与mxnet) · Shanghai Meetup</title><meta name="description" content="R语言案例-客户分类分享人: 张云雁从B2B,B2C客户分类说开大纲：最开始学R的时候，是想找到一个能解决当时工作需要的账户分类问题的技术。然而深入研究发现，虽然客户分层及精准营销一直是数据挖掘的热点话题之一，但大多数的研究都集中在了有海量客户行为数据，及产品与客户关系简单等前提下的B2C客户分层里"><meta name="keywords" content="R,Python,数据科学,可视化"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/SHmeetup/css/style.css"><link rel="stylesheet" href="/SHmeetup/css/blog_basic.css"><link rel="stylesheet" href="/SHmeetup/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div id="allmap"></div><div class="logo-title"><div class="title"><h3 title=""><a href="/">Shanghai Meetup</a></h3><div class="description"><p>Nothing lasts forever.</p></div></div></div><ul class="social-links"><li><a href="https://twitter.com/Ben_wenbin"><i class="fa fa-twitter"></i></a></li><li><a href="http://instagram.com/hwbinbenben"><i class="fa fa-instagram"></i></a></li><li><a href="/SHmeetup/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://weibo.com/ben0036"><i class="fa fa-weibo"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai</a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/SHmeetup">首页</a></li><li><a href="/SHmeetup/about">关于</a></li><li><a href="/SHmeetup/archives">归档</a></li><li><a href="/SHmeetup/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"></a></li></div><div class="avatar"><img src="https://secure.gravatar.com/avatar/e71df8021446fe9759a9928b1dd5c28d?s=180&amp;r=G&amp;d="></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Meetup 4.08(客户分类与mxnet)</a></h3></div><div class="post-content"><h4 id="R语言案例-客户分类"><a href="#R语言案例-客户分类" class="headerlink" title="R语言案例-客户分类"></a>R语言案例-客户分类</h4><h4 id="分享人-张云雁"><a href="#分享人-张云雁" class="headerlink" title="分享人: 张云雁"></a>分享人: 张云雁</h4><p>从B2B,B2C客户分类说开大纲：最开始学R的时候，是想找到一个能解决当时工作需要的账户分类问题的技术。然而深入研究发现，虽然客户分层及精准营销一直是数据挖掘的热点话题之一，但大多数的研究都集中在了有海量客户行为数据，及产品与客户关系简单等前提下的B2C客户分层里。而B2B的客户分层，却鲜少有人提及，或者明确指出其区别。且B2B的非结构型数据及业务形态特殊性，又大大增加了这一行数据分析的复杂度。从而导致许多人，包括我，在做这一行时常常遇到各种各样问题，且因为问题的独特性，难以拾人牙慧，难以直接套用前人经验。</p>
+<p>另外，这些问题究根到底，可以回归到我们常问的，数据分析要理解业务，但理解业务到什么程度可以指导分析，数据分析入门和进阶，除了通晓更多的调参和技术以外，还有什么需要额外注意等等问题上。</p>
+<p>因此，将在这里尝试分享我对B2B,B2C商户分类问题的思考，以及一起探讨一下数据分析与业务的联系。</p>
+<p>结构：</p>
+<ol>
+<li><p>现状：客户分类方法     </p>
+<ul>
+<li>常用B2C分类方法     </li>
+<li>B2B分类的特殊性与不适用性     </li>
+<li>常见迷茫与沟通障碍</li>
+</ul>
+</li>
+<li><p>追根溯源：论业务模式对数据分析岗位的影响     </p>
+<ul>
+<li>论B2B,B2C业务模式不同对数据分析方法的不同     </li>
+<li>沟通成本及换位思考</li>
+<li>扩展：关于定位和未来</li>
+</ul>
+</li>
+</ol>
+<h4 id="深度学习与Mxnet"><a href="#深度学习与Mxnet" class="headerlink" title="深度学习与Mxnet"></a>深度学习与Mxnet</h4><h4 id="分享人-郎大为"><a href="#分享人-郎大为" class="headerlink" title="分享人: 郎大为"></a>分享人: 郎大为</h4><p>DMLC（Distributed (Deep) Machine Learning Community）是由一群极客发起的组织，主要目标是提供快速高质量的开源机器学习工具。近来流行的boosting模型xgboost便是出自这个组织。<br>深度学习工具mxnet也是由DMLC开发的，也是一个与Tensorflow有一战之力的深度学习工具。这个工具含有R，python，julia等语言的接口，本次分享会以<br>Ｒ语言接口为例介绍简单介绍深度学习入门。</p>
+<ol start="0">
+<li>安装的那些事情</li>
+<li>使用深度学习进行回归与分类</li>
+<li>多层神经网络的建立</li>
+<li>CNN与RNN</li>
+<li>其他实例演示</li>
+</ol>
+<p>建议试读<a href="https://www.slideshare.net/tw_dsconf/ss-62245351" target="_blank" rel="noopener">Deep Leanring Tutorial By Hung-yi Lee</a></p>
+<h3 id="地点与时间"><a href="#地点与时间" class="headerlink" title="地点与时间"></a>地点与时间</h3><p>地点: 昌平路700号，劳动报社大厦一楼 联合创业办公社－光源<br>时间: 4.08下午14:00</p>
+<h3 id="时间安排"><a href="#时间安排" class="headerlink" title="时间安排"></a>时间安排</h3><p>以下是我们的timeline:</p>
+<p>14:10 ~ 14:20 Warm up Discussion<br>14:30 ~ 14:50 Main Issue I<br>15:00 ~ 15:20 Main Issue II<br>15:30 ~ 16:00 Group Discussion<br>而如果遇到时间比较长一点的演讲，或是遇到大家反应比较热烈、讨论比较激烈的演讲，我们会自动将 Main Issue 的时间稍微延后 10 ~ 20 分钟。</p>
+<p>(1) Warm up Discussion：</p>
+<p>在 Warm up Discussion 中，我们可能会分享一些 R 的 Tips 或是一些 MLDM 上的 Tips，做为每次聚会的开端。</p>
+<p>(2) Main Issue：</p>
+<p>在 Main Issue 的部分，我们主要会排入一些经验分享的议题：其中包含 MLDM 的经验分享、一些好用的工具的使用经验分享、R的工具介绍、MLDM 方法的介绍与讨论、一些好玩的 Data 议题、或是一些资料库的工具与议题……等等，都是我们希望能排入议程的主题。也欢迎与会的大家，可以不吝分享您的专长，让大家可以有互相交流与学习的机会。</p>
+<p>(3) Group Discussion：</p>
+<p>最后的 Group Discussion，其实是让大家有一个每周一起讨论某个主题的机会与时间。也许大家会一起开读书会，看看 coursera 上的影片，大就可以每周聚在一起，讨论一下影片的进度与看到的问题；或许，大家是想要组队去 Kaggle 比赛，也可以利用这时间，和队友好好讨论一下进度；更或许，你们是一起在关注某种 data 的伙伴，也可以利用这时间来讨论一下彼此分析的心得唷，说不定因此就可以激发出火花，研发出某种特殊的服务……等等。其实，只要有人发起，有人跟随，他就可以成为一个小小的讨论群组，在会后可以一起交流与讨论！</p>
+<p>当然，每次会又一定会有 Free Discussion 这组，让大家可以互相 Social 一下。也一定会有 R Tutorial 这组，让大家可以来询问一些 R 相关的议题</p>
+<p><strong>感谢<a href="https://www.meetup.com/Taiwan-R/" target="_blank" rel="noopener">Taiwan RUser group</a>提供的时间安排, 描述内容未做修改, <a href="https://github.com/qinwf/ropencc" target="_blank" rel="noopener">ropencc</a>完成的简繁体转换</strong></p>
+<h3 id="活动地点简介"><a href="#活动地点简介" class="headerlink" title="活动地点简介"></a>活动地点简介</h3><p><img src="http://p1.bpimg.com/4851/364f74412c0ae62b.jpg" alt="此处应有图"></p>
+<p>联合创业办公社（P2）是中国联合办公领域规模最大、起步最早、影响力最广、服务团队最多的联合办公空间，成立于2010年。目前，P2在全国范围已有20余个空间，空间内入驻了超过300家团队，吸引上万名会员。空间内团队总融资金额超过3.5亿美金，其中有超过10支团队在空间中融到了A轮。<br>2015-2016年，P2引进并主办了GCUC联合办公峰会，并将其在中国常态化。<br>2016年3月，P2与北京创客空间达成合资协议，打造了国内最具产业吸引力的创客空间品牌Maker²。<br>2016年4月，P2与Google for Entrepreneurs达成战略合作，加入其全球创业网络，合力布局开发。<br>2016年7月，P2与太合音乐集团成立合资公司，打造国内首家音乐垂直主题联合办公空间，殿堂级音乐人郑钧作为空间架构师。<br>2016年9月，P2与北京国华置业达成合作，共同打造北京CBD核心高端商业综合体”华贸中心”内的联合办公生态。</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-04-02</span><i class="fa fa-comment-o"></i><a href="/SHmeetup/2017/04/02/20170402/#comments">评论</a><i class="fa fa-tag"></i><a href="/SHmeetup/categories/沙龙分享/" title="沙龙分享" class="tag">沙龙分享 </a></div></div></div></div><div class="share"><div class="evernote"> <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"> <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"> <a href="http://twitter.com/home?status=,http://langdawei.com/SHmeetup/2017/04/02/20170402/,Shanghai Meetup,Meetup 4.08(客户分类与mxnet),;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/SHmeetup/2017/04/25/20170425/" title="上海线下数据沙龙第二期纪要" class="btn">上一篇</a></li><li class="next pagbuttons"><a role="navigation" href="/SHmeetup/2017/02/18/20170219/" title="上海线下数据沙龙第一期纪要" class="btn">下一篇</a></li></ul></div><a id="comments"></a><div data-thread-key="2017/04/02/20170402/" data-title="Meetup 4.08(客户分类与mxnet)" data-url="http://langdawei.com/SHmeetup/2017/04/02/20170402/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"yalei"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+
+</script></div></div></div></div><script src="/SHmeetup/js/jquery.js"></script><script src="/SHmeetup/js/jquery-migrate-1.2.1.min.js"></script><script src="/SHmeetup/js/jquery.appear.js"></script><script src="http://api.map.baidu.com/api?v=2.0&amp;ak=A7a083a11ddc336b3c39115e375d0adf"></script><script src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script><link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css"><script>var map = new BMap.Map('allmap');
+// var poi = new BMap.Point(121.455345,31.23271);
+var poi = new BMap.Point(121.448996,31.241256);
+map.centerAndZoom(poi, 16);
+map.enableScrollWheelZoom();
+// var content = '<div style="margin:0;line-height:20px;padding:2px;">' + '地址: 愚园东路28号东海广场3号楼1楼, 近地铁2,7号线静安寺站' + '<br/>时间: 2017-02-18 14:00</div>';
+var content = '<div style="margin:0;line-height:20px;padding:2px;">' + '地址: 昌平路700号，劳动报社大厦一楼 联合创业办公社－光源';
+//创建检索信息窗口对象
+var searchInfoWindow = null;
+// searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {title:"东海广场3号楼", width:290, height:60, panel:"panel", enableAutoPan : true, searchTypes:[BMAPLIB_TAB_SEARCH,BMAPLIB_TAB_TO_HERE, BMAPLIB_TAB_FROM_HERE]});
+searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {title:"联合创业办公社－光源", width:290, height:60, panel:"panel", enableAutoPan : true, searchTypes:[BMAPLIB_TAB_SEARCH,BMAPLIB_TAB_TO_HERE, BMAPLIB_TAB_FROM_HERE]});
+var marker = new BMap.Marker(poi); //创建marker对象
+marker.enableDragging(); //marker可拖拽
+marker.addEventListener("click", function(e){ searchInfoWindow.open(marker)});
+map.addOverlay(marker); //在地图中添加marker
+var ele = document.getElementById('allmap');
+ele.style.height='50%';
+ele.style.width='100%';</script></body></html>
