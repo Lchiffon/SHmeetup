@@ -1,5 +1,7 @@
 # SHmeetup
 
+https://api.travis-ci.org/Lchiffon/SHmeetup.svg?branch=master
+
 上海Meetup临时页面,网址:[http://langdawei.com/SHmeetup](http://langdawei.com/SHmeetup)
 
 build请保证已安装node, hexo和git
